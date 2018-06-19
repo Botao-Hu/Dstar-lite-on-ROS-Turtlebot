@@ -1,0 +1,5 @@
+<library path="lib/libd_star_lite_lib">
+    <class name="d_star_lite/D_star_lite" type="d_star_lite::D_star_lite" base_class_type="nav_core::BaseGlobalPlanner">
+        <description>This is a global planner plugin by iroboapp project.</description>
+    </class>
+</library>
