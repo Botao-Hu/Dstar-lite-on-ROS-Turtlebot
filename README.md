@@ -35,7 +35,29 @@ alt="IMAGE ALT TEXT HERE" width="360" height="240" border="10" /></a>
 
 ## 3. Usage
 
-The ROS package interface is adapted from https://github.com/jaedlund/me134_explorer with the same structure, but the contents are mostly changed.
+One of the ROS package interface is adapted from [this repo](https://github.com/jaedlund/me134_explorer) with the same structure, but the contents are mostly changed.
 
 ### Global Planner Plugin
-* C++ file
+
+Copy `./ros-Turtlebot/d_star_lite` to `YOUR_WORKSPACE/src`. Generally, follow [this tutorial](http://wiki.ros.org/navigation/Tutorials/Writing%20A%20Global%20Path%20Planner%20As%20Plugin%20in%20ROS) to plug in a naive global planner that simply goes straight from start to goal. Several notes:
+
+* C++ header file is provided as an interface, with cpp file implementation. You **must** implement methods provided by the super class.
+* Remember to source your work space after registering your planner configurations.
+```
+cd catkin_ws
+source devel/setup.bash
+```
+* Your default global planner is changed once you have done this step. Remember to recover it after use, in `move_base` node launch file.
+
+### ROS setup
+
+Copy `./ros-Turtlebot/me134_explorer` to `YOUR_WORKSPACE/src`. Follow the tutorial of the above repo to set up the environment. For simulation, you can
+* Change the default map,
+* Change the output size of `gmapping` node,
+* Use navigate 2D in rviz to test new global planner.
+
+### Run D* lite
+
+Navigate to `./script` folder, and run `me134_explorer.py` while everything else in the environment is correctly running in terminals (Turtlebot, sensor, gmapping, etc). `d_star_lite.py` provides definition of the planner class, keep it. Sometimes you might run into map size issues, remember to change the input map array size according to your gmapping settings. You can turn off plot functionality if you find it annoying.
+
+### Enjoy watching your Turtlebot!
