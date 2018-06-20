@@ -23,7 +23,7 @@ alt="IMAGE ALT TEXT HERE" width="480" height="240" border="10" /></a>
 
 We plugged D* lite planner as external packages into Robot Operating System, and launched with a Turtlebot in real practice.
 
-Our algorithm and implementation worked well on accuracy and efficiency, on ROS simulator, simple area experiment and complex area experiment.
+Our algorithm and implementation worked well on accuracy and efficiency, in ROS simulator, simple area experiment and complex area experiment.
 
 Click the following screenshot to watch the Turtlebot's performance in read world. **Second experiment video also included in the same channel**.
 
